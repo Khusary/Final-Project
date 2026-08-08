@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var t=localStorage.getItem("securecrypt_theme");if(!t){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark";}if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Dashboard — SecureCrypt</title>
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/dashboard.css" />
+<style>
+  .tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+  .tab-btn { padding: 10px 18px; border-radius: var(--radius-sm); background: transparent; border: 1px solid var(--border-glass); color: var(--text-secondary); font-size: 13px; font-weight: 600; }
+  .tab-btn.active { background: rgba(59,130,246,0.15); border-color: var(--blue); color: var(--blue-light); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+</style>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar glass-panel">
+    <a href="../index.html" class="brand"><img class="brand-icon" src="../images/logo.png" alt="SecureCrypt logo" /> SC Admin</a>
+    <nav>
+      <a href="admin-dashboard.html" class="sidebar-link active"><span class="icon">📊</span> Overview</a>
+      <a href="javascript:void(0)" class="sidebar-link" id="admin-logout-btn"><span class="icon">🚪</span> Logout</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-left">
+        <button id="admin-menu-toggle" class="btn btn-outline btn-sm menu-toggle-btn">☰</button>
+        <div>
+          <h1 class="page-title">Admin Dashboard</h1>
+          <p class="page-subtitle">Platform-wide statistics and management.</p>
+        </div>
+      </div>
+      <button class="theme-toggle-btn" type="button">☀️</button>
+    </div>
+
+    <div class="grid stats-grid">
+      <div class="glass-panel stat-card">
+        <div class="stat-icon">👥</div>
+        <div class="stat-value" id="admin-stat-users">0</div>
+        <div class="stat-label">Total Users</div>
+      </div>
+      <div class="glass-panel stat-card">
+        <div class="stat-icon">✅</div>
+        <div class="stat-value" id="admin-stat-verified">0</div>
+        <div class="stat-label">Verified Users</div>
+      </div>
+      <div class="glass-panel stat-card">
+        <div class="stat-icon">📁</div>
+        <div class="stat-value" id="admin-stat-files">0</div>
+        <div class="stat-label">Total Files</div>
+      </div>
+      <div class="glass-panel stat-card">
+        <div class="stat-icon">💾</div>
+        <div class="stat-value" id="admin-stat-storage">0 B</div>
+        <div class="stat-label">Storage Used</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="users">Users</button>
+      <button class="tab-btn" data-tab="files">Files</button>
+      <button class="tab-btn" data-tab="logs">Activity Logs</button>
+    </div>
+
+    <div id="tab-users" class="tab-panel active glass-panel" style="padding:24px;">
+      <input class="form-input mb-16" style="max-width:300px;" type="text" id="admin-user-search" placeholder="🔍 Search users..." />
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Email</th><th>Status</th><th>Files</th><th>Storage</th><th>Action</th></tr></thead>
+          <tbody id="admin-users-tbody"><tr><td colspan="6" class="text-muted text-center">Loading...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="tab-files" class="tab-panel glass-panel" style="padding:24px;">
+      <input class="form-input mb-16" style="max-width:300px;" type="text" id="admin-file-search" placeholder="🔍 Search files..." />
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>File Name</th><th>Owner</th><th>Size</th><th>Uploaded</th><th>Action</th></tr></thead>
+          <tbody id="admin-files-tbody"><tr><td colspan="5" class="text-muted text-center">Loading...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="tab-logs" class="tab-panel glass-panel" style="padding:24px;">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Action</th><th>Actor</th><th>Description</th><th>Timestamp</th></tr></thead>
+          <tbody id="admin-logs-tbody"><tr><td colspan="4" class="text-muted text-center">Loading...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/notification.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/admin.js"></script>
+<script>
+  document.querySelectorAll('.tab-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach((p) => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(`tab-${btn.dataset.tab}`).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

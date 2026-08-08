@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var t=localStorage.getItem("securecrypt_theme");if(!t){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark";}if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SecureCrypt — Multi-Layered File Encryption</title>
+<link rel="stylesheet" href="css/style.css" />
+<style>
+  .hero { padding: 100px 0 80px; text-align: center; position: relative; overflow: hidden; }
+  .hero-glow { position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(59,130,246,0.15), transparent 70%); pointer-events: none; }
+  .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.15; max-width: 780px; margin: 0 auto 20px; position: relative; }
+  .hero h1 span { background: linear-gradient(135deg, var(--blue-light), var(--blue)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p { font-size: 17px; color: var(--text-secondary); max-width: 560px; margin: 0 auto 36px; position: relative; }
+  .hero-actions { display: flex; gap: 16px; justify-content: center; position: relative; }
+  .features { padding: 80px 0; }
+  .features h2 { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 48px; }
+  .feature-grid { grid-template-columns: repeat(3, 1fr); }
+  .feature-card { padding: 28px; }
+  .feature-card .icon { font-size: 30px; margin-bottom: 14px; }
+  .feature-card h3 { font-size: 17px; margin-bottom: 8px; }
+  .feature-card p { font-size: 14px; color: var(--text-secondary); }
+  .how-it-works { padding: 80px 0; }
+  .steps { grid-template-columns: repeat(4, 1fr); }
+  .step-card { padding: 24px; text-align: center; }
+  .step-num { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--blue-dark)); display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 14px; }
+  footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 13px; border-top: 1px solid var(--border-glass); }
+  @media (max-width: 900px) { .feature-grid, .steps { grid-template-columns: 1fr 1fr; } .hero h1 { font-size: 36px; } }
+  @media (max-width: 560px) { .feature-grid, .steps { grid-template-columns: 1fr; } .hero-actions { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand"><img class="brand-icon" src="images/logo.png" alt="SecureCrypt logo" /> SecureCrypt</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="pages/login.html">Login</a>
+      <a href="pages/register.html" class="btn btn-primary btn-sm">Get Started</a>
+      <button class="theme-toggle-btn" type="button">☀️</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <h1>Multi-Layered <span>File Encryption</span> with Secure Cloud Storage</h1>
+    <p>SecureCrypt encrypts your files with hybrid AES-256 + RSA encryption, verifies integrity with SHA-256 hashing and digital signatures, and stores only ciphertext in the cloud — never your original files.</p>
+    <div class="hero-actions">
+      <a href="pages/register.html" class="btn btn-primary">Create Free Account</a>
+      <a href="pages/login.html" class="btn btn-outline">Sign In</a>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2>Built for Real Security</h2>
+    <div class="grid feature-grid">
+      <div class="glass-panel feature-card">
+        <div class="icon">🔒</div>
+        <h3>Hybrid AES-256 + RSA</h3>
+        <p>Every file is encrypted with a unique AES-256-GCM key, which is itself encrypted using RSA-2048 before storage.</p>
+      </div>
+      <div class="glass-panel feature-card">
+        <div class="icon">🧾</div>
+        <h3>Digital Signatures</h3>
+        <p>Each encrypted file is signed with RSA. Any tampering is detected and decryption is rejected automatically.</p>
+      </div>
+      <div class="glass-panel feature-card">
+        <div class="icon">🛡️</div>
+        <h3>SHA-256 Integrity Checks</h3>
+        <p>Original and encrypted file hashes are verified at every step, before and after decryption.</p>
+      </div>
+      <div class="glass-panel feature-card">
+        <div class="icon">✉️</div>
+        <h3>OTP-Gated Decryption</h3>
+        <p>Decrypting a file requires a one-time code sent to your verified email — no code, no access.</p>
+      </div>
+      <div class="glass-panel feature-card">
+        <div class="icon">☁️</div>
+        <h3>Encrypted Cloud Storage</h3>
+        <p>Only ciphertext ever touches the cloud. Your original file never leaves the server unencrypted.</p>
+      </div>
+      <div class="glass-panel feature-card">
+        <div class="icon">📊</div>
+        <h3>Full Activity Logs</h3>
+        <p>Every login, upload, download, and decryption is logged with IP and timestamp for full auditability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="container">
+    <h2 style="text-align:center;font-size:32px;font-weight:700;margin-bottom:48px;">How It Works</h2>
+    <div class="grid steps">
+      <div class="glass-panel step-card"><div class="step-num">1</div><h3>Upload</h3><p style="font-size:13px;color:var(--text-secondary);">Select any file to upload securely.</p></div>
+      <div class="glass-panel step-card"><div class="step-num">2</div><h3>Encrypt</h3><p style="font-size:13px;color:var(--text-secondary);">AES-256 + RSA hybrid encryption is applied automatically.</p></div>
+      <div class="glass-panel step-card"><div class="step-num">3</div><h3>Store</h3><p style="font-size:13px;color:var(--text-secondary);">Ciphertext is uploaded to encrypted cloud storage.</p></div>
+      <div class="glass-panel step-card"><div class="step-num">4</div><h3>Decrypt</h3><p style="font-size:13px;color:var(--text-secondary);">Verify with an email OTP to securely recover your file.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 SecureCrypt. Final Year Project — Multi-Layered File Encryption System.
+</footer>
+
+<script src="js/theme.js"></script>
+</body>
+</html>

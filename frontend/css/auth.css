@@ -1,0 +1,23 @@
+.otp-inputs { display: flex; gap: 10px; justify-content: center; margin: 20px 0; }
+.otp-inputs input {
+  width: 48px; height: 56px; text-align: center; font-size: 22px; font-weight: 700;
+  background: var(--overlay-soft); border: 1px solid var(--border-glass); border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+.otp-inputs input:focus { outline: none; border-color: var(--blue); background: var(--input-focus-bg); }
+
+.auth-bg-glow {
+  position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.18), transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+
+.password-strength { height: 4px; border-radius: 2px; background: var(--overlay-track); margin-top: 8px; overflow: hidden; }
+.password-strength-bar { height: 100%; width: 0%; transition: width .25s, background .25s; }
+
+@media (max-width: 480px) {
+  .auth-card { padding: 28px 20px; }
+  .otp-inputs { gap: 6px; }
+  .otp-inputs input { width: 40px; height: 48px; font-size: 18px; }
+}

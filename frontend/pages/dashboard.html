@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var t=localStorage.getItem("securecrypt_theme");if(!t){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark";}if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — SecureCrypt</title>
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar glass-panel">
+    <a href="../index.html" class="brand"><img class="brand-icon" src="../images/logo.png" alt="SecureCrypt logo" /> SecureCrypt</a>
+    <nav>
+      <a href="dashboard.html" class="sidebar-link active"><span class="icon">🏠</span> Dashboard</a>
+      <a href="upload.html" class="sidebar-link"><span class="icon">⬆️</span> Upload</a>
+      <a href="files.html" class="sidebar-link"><span class="icon">📁</span> My Files</a>
+      <a href="profile.html" class="sidebar-link"><span class="icon">👤</span> Profile</a>
+      <a href="javascript:void(0)" class="sidebar-link" id="logout-btn"><span class="icon">🚪</span> Logout</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-left">
+        <button id="menu-toggle" class="btn btn-outline btn-sm menu-toggle-btn">☰</button>
+        <div>
+          <h1 class="page-title">Welcome back, <span id="welcome-name">...</span></h1>
+          <p class="page-subtitle">Here's an overview of your encrypted storage.</p>
+        </div>
+      </div>
+      <span id="verification-badge" class="badge badge-warning">...</span>
+      <button class="theme-toggle-btn" type="button">☀️</button>
+    </div>
+
+    <div class="grid stats-grid">
+      <div class="glass-panel stat-card">
+        <div class="stat-icon">📁</div>
+        <div class="stat-value" id="stat-total-files">0</div>
+        <div class="stat-label">Total Files</div>
+      </div>
+      <div class="glass-panel stat-card">
+        <div class="stat-icon">💾</div>
+        <div class="stat-value" id="stat-storage-used">0 B</div>
+        <div class="stat-label">Storage Used</div>
+      </div>
+      <div class="glass-panel stat-card">
+        <div class="stat-icon">🕒</div>
+        <div class="stat-value" style="font-size:16px;" id="stat-last-upload">—</div>
+        <div class="stat-label">Last Upload</div>
+      </div>
+      <div class="glass-panel stat-card">
+        <div class="stat-icon">✅</div>
+        <div class="stat-value" style="font-size:16px;" id="stat-verification">—</div>
+        <div class="stat-label">Account Status</div>
+      </div>
+    </div>
+
+    <h2 class="mb-16" style="font-size:18px;">Recent Activity</h2>
+    <div class="grid" id="recent-files-list" style="grid-template-columns:1fr;gap:12px;"></div>
+  </main>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/notification.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

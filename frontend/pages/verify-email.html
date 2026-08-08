@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var t=localStorage.getItem("securecrypt_theme");if(!t){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark";}if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Verify Email — SecureCrypt</title>
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/auth.css" />
+</head>
+<body>
+<div class="auth-bg-glow"></div>
+<button class="theme-toggle-btn" type="button" style="position:fixed;top:20px;right:20px;z-index:10;">☀️</button>
+<div class="auth-wrapper">
+  <div class="glass-panel auth-card text-center">
+    <a href="../index.html" class="brand mb-24" style="display:inline-flex;"><img class="brand-icon" src="../images/logo.png" alt="SecureCrypt logo" /> SecureCrypt</a>
+    <h1 class="auth-title">Verify your email</h1>
+    <p class="auth-subtitle">We sent a 6-digit code to <strong id="verify-email-display" style="color:var(--text-primary);"></strong></p>
+
+    <form id="verify-form">
+      <div class="otp-inputs">
+        <input type="text" maxlength="1" inputmode="numeric" />
+        <input type="text" maxlength="1" inputmode="numeric" />
+        <input type="text" maxlength="1" inputmode="numeric" />
+        <input type="text" maxlength="1" inputmode="numeric" />
+        <input type="text" maxlength="1" inputmode="numeric" />
+        <input type="text" maxlength="1" inputmode="numeric" />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block mt-16">Verify Email</button>
+    </form>
+
+    <p class="auth-footer">Didn't get a code? <a href="javascript:void(0)" id="resend-otp-btn">Resend code</a></p>
+  </div>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/notification.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>

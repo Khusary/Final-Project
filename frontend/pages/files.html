@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var t=localStorage.getItem("securecrypt_theme");if(!t){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark";}if(t==="light")document.documentElement.setAttribute("data-theme","light");})();</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Files — SecureCrypt</title>
+<link rel="stylesheet" href="../css/style.css" />
+<link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar glass-panel">
+    <a href="../index.html" class="brand"><img class="brand-icon" src="../images/logo.png" alt="SecureCrypt logo" /> SecureCrypt</a>
+    <nav>
+      <a href="dashboard.html" class="sidebar-link"><span class="icon">🏠</span> Dashboard</a>
+      <a href="upload.html" class="sidebar-link"><span class="icon">⬆️</span> Upload</a>
+      <a href="files.html" class="sidebar-link active"><span class="icon">📁</span> My Files</a>
+      <a href="profile.html" class="sidebar-link"><span class="icon">👤</span> Profile</a>
+      <a href="javascript:void(0)" class="sidebar-link" id="logout-btn"><span class="icon">🚪</span> Logout</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-left">
+        <button id="menu-toggle" class="btn btn-outline btn-sm menu-toggle-btn">☰</button>
+        <div>
+          <h1 class="page-title">My Files</h1>
+          <p class="page-subtitle">All your encrypted files, stored securely in the cloud.</p>
+        </div>
+      </div>
+      <a href="upload.html" class="btn btn-primary btn-sm">+ Upload File</a>
+      <button class="theme-toggle-btn" type="button">☀️</button>
+    </div>
+
+    <div class="form-group" style="max-width:320px;">
+      <input class="form-input" type="text" id="file-search" placeholder="🔍 Search files..." />
+    </div>
+
+    <div class="grid" id="files-list" style="grid-template-columns:1fr;gap:12px;"></div>
+  </main>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/notification.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/files.js"></script>
+</body>
+</html>
